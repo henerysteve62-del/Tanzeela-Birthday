@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Tanzeela ❤️</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .card {
+      background: rgba(255,255,255,0.95);
+      padding: 40px 30px;
+      border-radius: 22px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      max-width: 380px;
+      animation: pop 1.2s ease;
+    }
+    @keyframes pop {
+      0% { transform: scale(0.6); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    h1 {
+      font-size: 2.3rem;
+      color: #ff5f8f;
+      margin-bottom: 10px;
+      animation: glow 2.5s infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 8px #fbc2eb; }
+      to { text-shadow: 0 0 18px #ff5f8f; }
+    }
+    h2 {
+      font-size: 1.2rem;
+      color: #777;
+      margin-bottom: 18px;
+      font-weight: normal;
+    }
+    p {
+      font-size: 1.05rem;
+      color: #444;
+      line-height: 1.7;
+    }
+    .photo {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 15px auto 20px;
+      border: 4px solid #ff5f8f;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      animation: floatPic 3s ease-in-out infinite;
+    }
+    @keyframes floatPic {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    .heart {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      background: #ff5f8f;
+      transform: rotate(45deg);
+      animation: float 6s linear infinite;
+    }
+    .heart::before, .heart::after {
+      content: '';
+      width: 18px;
+      height: 18px;
+      background: #ff5f8f;
+      border-radius: 50%;
+      position: absolute;
+    }
+    .heart::before { top: -9px; left: 0; }
+    .heart::after { left: -9px; top: 0; }
+    @keyframes float {
+      0% { bottom: -10%; opacity: 0; }
+      50% { opacity: 1; }
+      100% { bottom: 110%; opacity: 0; transform: translateX(60px) rotate(45deg); }
+    }
+    footer {
+      margin-top: 20px;
+      font-size: 0.95rem;
+      color: #666;
+    }
+    button {
+      margin-top: 22px;
+      padding: 12px 26px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 30px;
+      background: #ff5f8f;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover { background: #e94b78; }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="card">
+    <h1>Happy Birthday Tanzeela 🎂</h1>
+    <h2>To the most beautiful soul 💖</h2>
+
+    <!-- Replace photo.jpg with her photo -->
+    <img src="photo.jpg" alt="Tanzeela" class="photo" />
+
+    <p>
+      Wishing a beautiful birthday to someone who is just as lovely on the inside as she is on the outside.<br><br>
+      Your pure heart is your greatest strength, and I feel so lucky to know you.<br><br>
+      May your day be filled with the same peace and joy you bring to everyone around you ✨
+    </p>
+
+    <footer>
+      — With love, <strong>Abrar ❤️</strong>
+    </footer>
+
+    <button onclick="alert('You are truly special to me 💗')">Tap for Love 💕</button>
+  </div>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+    setInterval(createHeart, 350);
+  </script>
+</body>
+</html>
